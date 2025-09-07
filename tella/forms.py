@@ -11,14 +11,24 @@ class clientforms(forms.ModelForm):
               })} 
 
 class mesurClientforms(forms.ModelForm): 
-       class Meta:
+    class Meta:
         model = mesurClient
         fields = ['habit', 'panthalon']
-        labels = {'habit':"habit",'panthalon':'panthalon'}
-        widgets = {'habit':
-                   forms.TextInput(attrs={'type':'tel','placeholder':"entrez les mesures de l'hablit EX: 34 45 23.. "
-              })} 
-        widgets = {'panthalon':
-                   forms.TextInput(attrs={'type':'tel','placeholder':"entrez les mesures du  EX: 74 90 23.. "
-              })} 
-
+        labels = {
+            'habit': "habit",
+            'panthalon': 'panthalon'
+        }
+        widgets = {
+            'habit': forms.TextInput(
+                attrs={
+                    'type': 'tel',
+                    'placeholder': "entrez les mesures de l'habit EX: 34 45 23.. "
+                }
+            ),
+            'panthalon': forms.TextInput(
+                attrs={
+                    'type': 'tel',
+                    'placeholder': "entrez les mesures du pantalon EX: 74 90 23.. "
+                }
+            )
+        }
