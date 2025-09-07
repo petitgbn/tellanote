@@ -15,10 +15,10 @@ class mesurClientforms(forms.ModelForm):
         model = mesurClient
         fields = ['habit', 'panthalon']
         labels = {'habit':"habit",'panthalon':'panthalon'}
-       widgets = {'habit':
+        widgets = {'habit':
                    forms.TextInput(attrs={'type':'tel','placeholder':"entrez les mesures de l'hablit EX: 34 45 23.. "
               })} 
-       widgets = {'panthalon':
+        widgets = {'panthalon':
                    forms.TextInput(attrs={'type':'tel','placeholder':"entrez les mesures du  EX: 74 90 23.. "
               })} 
 
