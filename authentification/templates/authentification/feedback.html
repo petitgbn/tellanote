@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'tella/feedback.css' %}">
+</head>
+<body>
+    
+    <div class="feedback">
+
+        <h2>nous contactez</h2>
+        
+{% if request.GET.thanks %}
+<p style="color: rgb(252, 194, 5); margin-top: 5px;">Merci pour votre message ! </p>
+{% endif %}
+
+        <form method="post" action="{% url 'feedback_footer' %}">
+    {% csrf_token %}
+    <textarea name="message" rows="2" placeholder="Votre message..."></textarea>
+    <button type="submit" >Envoyer</button>
+</form>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% include "./haut.html" %}
+<main>
+<div class="c-form">
+        <h3>ajouter un client</h3>
+    <form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="ajouter" class="btn">
+</form>
+<p></p>
+<p><a href="{% url 'tella:index' %}" class="btn" style="text-decoration: none;">page aceuil</a></p>
+
+</div>
+</main>
+{% include "./feedback.html" %}

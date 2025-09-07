@@ -1,0 +1,69 @@
+.feedback{
+    margin-top: 5vh;
+    width: 100%;
+    min-height: fit-content;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    flex-direction: column;
+    border-top: 1px solid rgb(255, 208, 0);
+}
+.feedback h2{
+    margin-top: 2vh;
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.feedback h2::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(255, 208, 0);
+}
+.feedback form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: transparent;
+}
+.feedback form textarea{
+    padding: 30px;
+    resize: none;
+    width: 90%;
+    height: 25vh;
+    background-color: rgb(252, 194, 5);
+    color: black;
+    border-radius: 30px;
+    margin: 30px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.feedback form textarea::placeholder{
+    color: black;
+}
+.feedback form textarea:focus{
+    border: none;
+}
+.feedback form button{
+    outline: none;
+    font-size: 1rem;
+    font-weight: bolder;
+    width: 40%;
+    color: black;
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscription</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .form-container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        width: 350px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 14px;
+        transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+        border-color: #4285F4;
+        outline: none;
+        box-shadow: 0 0 5px rgba(66, 133, 244, 0.5);
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        background-color: #4285F4;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #357ae8;
+    }
+
+    .form-footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #777;
+    }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Inscription</h2>
+    <form action="/signup" method="post">
+        {% csrf_token %}
+
+        <label for="username">Nom d'utilisateur</label>
+        <input type="text" id="username" name="username" placeholder="Créez votre nom d'utilisateur ici" required>
+
+        <label for="firstname">Prénom</label>
+        <input type="text" id="firstname" name="firstname" placeholder="Créez votre prénom ici" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Créez votre courriel ici" required>
+
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" placeholder="Créez votre mot de passe ici" required>
+
+        <label for="confirmpwd">Confirmer le mot de passe</label>
+        <input type="password" id="confirmpwd" name="confirmpwd" placeholder="Entrez à nouveau votre mot de passe" required>
+
+        <button type="submit">S'inscrire</button>
+    </form>
+
+    <div class="form-footer">
+        Déjà un compte ? <a href="/login">Connectez-vous</a>
+    </div>
+</div>
+
+</body>
+</html>

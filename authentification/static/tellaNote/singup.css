@@ -1,0 +1,146 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+.nav-index {
+  background: #111;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-index h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-index h1 span {
+  color: #FFD700;
+}
+
+.nav-index .links {
+  list-style: none;
+}
+
+.nav-index .links a {
+  text-decoration: none;
+  color: #000;
+  background: #FFD700;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-index .links a:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* ===== FORMULAIRE SIGNUP ===== */
+.signup {
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #1a1a1a;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.signup h2 {
+  color: #FFD700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* Champs du formulaire */
+.signup label {
+  display: block;
+  text-align: left;
+  margin: 8px 0 5px;
+  font-weight: bold;
+  color: #FFD700;
+}
+
+.signup input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 25px;
+  border: 2px solid #FFD700;
+  background: transparent;
+  color: #fff;
+  outline: none;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.signup input::placeholder {
+  color: #bbb;
+}
+
+/* Bouton */
+.signup button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  background: #FFD700;
+  border: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signup button:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Lien connexion */
+.signup p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.signup p a {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup p a:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .signup {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .signup input {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .signup button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}

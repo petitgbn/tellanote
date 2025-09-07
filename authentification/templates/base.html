@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tella-Note</title>
+    <link rel="stylesheet" href="{% static 'tellaNote/singup.css' %}">
+
+</head>
+<body>
+    
+    <nav>
+        <h1>Tella <span>Note</span></h1>
+        <ul class="links">
+            <li><a href="">ajouter un client</a></li>
+            <li><a href="">conexion</a></li>
+            <li><a href="">deconexion</a></li>
+        </ul>
+    </nav>
+    <center>
+        <h1>Application d'authentification par Donald Programmeur</h1>
+        <form method="post" action="{% url 'feedback_footer' %}">
+    {% csrf_token %}
+    <textarea name="message" rows="2" placeholder="Votre message..."></textarea>
+    <button type="submit">Envoyer</button>
+</form>
+
+{% if request.GET.thanks %}
+<p style="color: green; margin-top: 5px;">Merci pour votre message ! 🙏</p>
+{% endif %}
+
+        <br><br><br>
+
+        {% block content %}
+        {% endblock %}
+    </center>
+</body>
+</html>

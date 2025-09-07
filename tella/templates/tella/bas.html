@@ -1,0 +1,12 @@
+    <form method="post" action="{% url 'feedback_footer' %}">
+    {% csrf_token %}
+    <textarea name="message" rows="2" placeholder="Votre message..."></textarea>
+    <button type="submit">Envoyer</button>
+</form>
+
+{% if request.GET.thanks %}
+<p style="color: green; margin-top: 5px;">Merci pour votre message ! 🙏</p>
+{% endif %}
+
+</body>
+</html>

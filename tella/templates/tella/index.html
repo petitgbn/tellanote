@@ -1,0 +1,133 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>tableau de bord</title>
+   <link rel="stylesheet" href="{% static 'tella/index.css' %}">
+</head>
+
+<body>
+
+   <nav class="nav-index">
+      <h1>Tella <span>Note</span></h1>
+      <ul class="links">
+         <li><a href="{% url "tella:add" %}">ajouter un client</a></li>
+
+         <li><a href="{% url 'authentification:signout' %}">deconnexion</a></li>
+      </ul>
+   </nav>
+   <main>
+
+      <div class="name">
+
+         <p>bienvenu : {{ user.username }}</p>
+
+         <p>nombre total de client {{ total_client }} </p>
+
+      </div>
+      <form method="get" class="serch">
+         <input type="text" name="q" placeholder="rechercher client">
+         <button type="submit"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+               stroke="currentColor">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 
+               0 7 7 0 0114 0z" />
+            </svg></button>
+      </form>
+      <button class="btn-add-client"> <a href="{% url "tella:add" %}">ajouter un NOUVEAU client</a></button>
+      <h2 class="h-client">la list total des client</h2>
+      <ul class="client-list">
+         {% for client in clients %}
+         <li class="client-item">
+            <div class="client-header">
+               <h3>Nom : {{ client.name }}</h3>
+            </div>
+            <div class="client-actions">
+               <a href="{% url 'tella:edit-client' client.id %}" class="btn edit">
+                  <!-- Icône Éditer -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     viewBox="0 0 24 24">
+                     <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 
+                   7.04a1.003 1.003 0 0 0 0-1.42l-2.34-2.34a1.003 
+                   1.003 0 0 0-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.82z" />
+                  </svg>
+                  Éditer
+               </a>
+               <a href="{% url 'tella:supprimer-client' client.id %}" class="btn delete">
+                  <!-- Icône Supprimer -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     viewBox="0 0 24 24">
+                     <path d="M16 9v10H8V9h8m-1.5-6h-5l-1 
+                   1H5v2h14V4h-4.5l-1-1z" />
+                  </svg>
+                  Supprimer
+               </a>
+               <a href="{% url 'tella:mesur' client.id %}" class="btn add">
+
+                  voir les mesures
+               </a>
+            </div>
+         </li>
+         {% empty %}
+         <p>Aucun client n’a encore été ajouté</p>
+         {% endfor %}
+      </ul>
+
+
+
+      {% comment "" %}
+      <ul class="client-list">
+         {% for client in clients %}
+         <div class="list">
+            <div class="client-nom">
+               <h3>Nom : <span>{{ client.name }} </span></h3><button> <a
+                     href="{% url 'tella:mesur' client.id  %}">ajouter un mesure</a></button>
+
+            </div>
+
+            <samp>
+
+               <a href="{% url 'tella:edit-client' client.id%}">editer</a>
+               <a href="{% url 'tella:supprimer-client' client.id%}">supprimer</a>
+
+            </samp>
+
+         </div>
+
+
+         </p>
+         </li>
+         {%empty%}
+         <p>Aucun client n’a encore été ajouté</p>
+         {% endfor %}
+      </ul>
+      {% endcomment %}
+   </main>
+   {% comment "" %}
+
+   <ul>
+      {% for client in clients %}
+      <li><a href="{% url " tella:mesur" clients.id %}">{{ clients.name }}</a></li>
+      {% endfor %}
+   </ul>
+
+   <ul>
+      {% for mesurs in mesure %}
+      <li>{{ mesurs.client.name }}</li>
+      <li>{{ mesurs.habit }}</li>
+      {% endfor %}
+   </ul>
+   {% endcomment %}
+
+   {% comment "" %}
+   art
+   airzTYU89é
+   {% endcomment %}
+
+   {% include "./feedback.html" %}
+</body>
+
+</html>

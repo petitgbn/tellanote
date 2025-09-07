@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>tableau de bord</title>
+    <link rel="stylesheet" href="{% static 'tella/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'tella/form.css' %}" />
+    <link rel="stylesheet" href="{% static 'tella/mesur.css' %}" />
+  </head>
+  <body>
+    <nav class="nav-index">
+      <h1>Tella <span>Note</span></h1>
+      <ul class="links">
+        <li>
+          <a href="{% url 'tella:add' %}">ajouter un client</a>
+        </li>
+        <li>
+          <a href="{% url 'tella:index' %}">page aceuil</a>
+        </li>
+        <li>
+          <a href="{% url 'authentification:signout' %}">deconnexion</a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

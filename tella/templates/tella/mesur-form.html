@@ -1,0 +1,15 @@
+{% include "./haut.html" %}
+<main>
+<div class="c-form">
+        <h3>ajouter les mesures</h3>
+    <form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="ajouter" class="btn">
+</form>
+<p></p>
+<p><a href="{% url 'tella:mesur' client.id  %}" class="btn" style="text-decoration: none;">retoure a la liste des mesures</a></p>
+
+</div>
+</main>
+{% include "./feedback.html" %}

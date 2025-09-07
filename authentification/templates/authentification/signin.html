@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'tellaNote/nav.css' %}" />
+    <link rel="stylesheet" href="{% static 'tellaNote/singup.css' %}" />
+  </head>
+  <body>
+    <nav class="nav-index">
+      <h1>Tella <span>Note</span></h1>
+      <ul class="links">
+        
+        <li>
+          
+          <a href="{% url 'authentification:signup' %}">inscrptions</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="signup">
+        {% for message in messages %}
+          <strong><i>{{ message }}</i></strong>
+        {% endfor %}
+        <br /><br />
+        <h2>Connexion</h2>
+        <form action="/signin" method="post">
+          {% csrf_token %}
+
+          <!-- Nom d'utilisateur -->
+          <label for="username">Nom d'utilisateur</label>
+          <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur" required />
+          <br /><br />
+
+          <!-- Mot de passe -->
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required />
+          <br /><br />
+
+          <!-- Bouton -->
+          <button type="submit">Se connecter</button>
+          <p>Vous n'avez pas un compte ? <a href="/signup">inscrivez-vous</a></p>
+          <p></p>
+        </form>
+      </div>
+    </main>
+    {% include "./feedback.html" %}
+  </body>
+</html>

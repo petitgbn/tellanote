@@ -1,0 +1,195 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+     /* évite que padding + border fassent dépasser la largeur */
+}
+
+/* ======== GENERAL ======== */
+body {
+    margin: 0;
+    font-family: 'Amson', Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    width: 100%;
+    width: 100vw;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;   /* ⚡ empêche le scroll horizontal */
+}
+
+/* ======== NAVBAR ======== */
+.nav-index {
+    background: #111;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-index h1 {
+    font-size: 1.6rem;
+    color: #fff;
+    margin: 0;
+}
+
+.nav-index h1 span {
+    color: #FFD700; /* jaune */
+    font-weight: bold;
+}
+
+.nav-index .links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-index .links a {
+    text-decoration: none;
+    background: #000;
+    color: #FFD700;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-index .links a:hover {
+    background: #FFD700;
+    color: #000;
+}
+
+/* ======== MAIN SECTION ======== */
+main.mesur-class {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+main.mesur-class h2 {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+main.mesur-class h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+main.mesur-class h3 span {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+/* ======== BOUTON GLOBAL ======== */
+.btn {
+    display: inline-block;
+    background: #FFD700;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* ======== LISTE MESURES ======== */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+ul li {
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+    text-align: left;
+}
+
+ul li p {
+    margin: 8px 0;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;
+}
+
+
+ul li p span {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+/* ======== ACTIONS ======== */
+.mesur-action {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.mesur-action a {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.mesur-action a:first-child {
+    background: #FFD700;
+    color: #000;
+}
+
+.mesur-action a:first-child:hover {
+    background: #fff;
+}
+
+.mesur-action a:last-child {
+    background: #ff4444;
+    color: #fff;
+}
+
+.mesur-action a:last-child:hover {
+    background: #ff2222;
+}
+
+/* ======== ALERT ======== */
+.alert {
+    margin: 15px auto;
+    max-width: 600px;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.alert-success {
+    background: #28a745;
+    color: #fff;
+}
+
+.alert-error {
+    background: #dc3545;
+    color: #fff;
+}

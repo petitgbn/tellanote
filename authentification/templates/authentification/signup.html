@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'tellaNote/singup.css' %}" />
+    <link rel="stylesheet" href="{% static 'tellaNote/nav.css' %}" />
+  </head>
+  <body>
+    <nav class="nav-index">
+      <h1>Tella <span>Note</span></h1>
+      <ul class="links">
+        
+        <li>
+          <a href="{% url 'authentification:signin' %}">connexion</a>
+          
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <div class="signup">
+        {% for message in messages %}
+          <strong><i>{{ message }}</i></strong>
+        {% endfor %}
+
+        <h2>Inscription</h2><br />
+
+        <form action="/signup" method="post">
+          {% csrf_token %}
+          <form>
+            <!-- Nom d'utilisateur -->
+            <label for="username">Nom d'utilisateur</label>
+            <input type="text" id="username" name="username" placeholder="Créez votre nom d'utilisateur ici" required />
+            <br /><br />
+
+            <!-- Prénom -->
+            <label for="firstname">Prénom</label>
+            <input type="text" id="firstname" name="firstname" placeholder="Créez votre prénom ici" required />
+            <br /><br />
+
+            <!-- Courriel -->
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Créez votre courriel ici" required />
+            <br /><br />
+
+            <!-- Mot de passe -->
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" placeholder="Créez votre mot de passe ici" required />
+            <br /><br />
+
+            <!-- Confirmer le mot de passe -->
+            <label for="confirmpwd">Confirmer le mot de passe</label>
+            <input type="password" id="confirmpwd" name="confirmpwd" placeholder="Entrez à nouveau votre mot de passe" required />
+            <br /><br />
+
+            <!-- Bouton -->
+            <button type="submit">S'inscrire</button>
+            <p>deja un compte ? <a href="/signin">connectez-vous</a></p>
+          </form>
+        </form>
+      </div>
+    </main>
+    {% include "./feedback.html" %}
+  </body>
+</html>

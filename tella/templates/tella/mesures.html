@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'tella/mesur.css' %}">
+   
+</head>
+<body>
+      
+<nav class="nav-index">
+        <h1>Tella <span>Note</span></h1>
+        <ul class="links">
+            <li><a href="{% url "tella:add" %}">ajouter un client</a></li>
+            <li><a href="{% url 'tella:index' %}">page aceuil</a></li>
+            <li><a href="{% url 'authentification:signout' %}">deconnexion</a></li>
+        </ul>
+    </nav>
+<main>
+<main class="mesur-class">
+  <h2>la liste des mesures</h2>
+  <div class="test">
+    
+  <h3> <span>les mesures de : </span>{{ client.name }}</h3>
+  
+    <a href="{% url 'tella:addMesur' client.id %}" class="btn" style="text-decoration: none;">ajouter UNE NOUVELLE mesure</a>
+
+  </div>
+
+<ul>
+  {% for mesur in mesurs %}
+  <li>
+     <p><span>habit :</span> {{ mesur.habit }}</p>
+    <p> <span>panthalon :</span> {{ mesur.panthalon }}</p>
+    <p> <span>date : </span>{{ mesur.date|date:'d/m/Y/H : i' }}</p>
+    <div class="mesur-action">
+      
+      <a href="{% url 'tella:modifer-mesur' mesur.id %}">modifer les mesures</a>
+    
+    
+      <a href="{% url 'tella:supprimer-mesur' mesur.id %}">supprimer les mesures</a>
+    
+</div>
+  </li>
+   
+    <hr />
+  {% empty %}
+    <h5>ceux client na pas encor de mesurs</h5>
+  {% endfor %}
+</ul>
+
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} mt-2" role="alert">{{ message }}</div>
+  {% endfor %}
+{% endif %}
+
+<p><a href="{% url 'tella:index' %}" class="btn" style="text-decoration: none;">page aceuil</a></p>
+
+</main>
+{% include "./feedback.html" %}
+</body>
+</html>

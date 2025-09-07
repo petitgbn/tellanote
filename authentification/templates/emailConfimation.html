@@ -1,0 +1,17 @@
+{% autoescape off %}
+
+Bienvenue sur Tella-Note
+
+Bonjoure {{ name }}
+
+Veuillez confirmer votre adresse e-mail en cliquant sur le lien ci-dessous :
+
+confirm link :https//{{domain}}{% url 'authentification:activate' uidb64=uid token=token %}
+{% endautoescape %}
+<p>Bienvenue sur la connexion DonaldPro</p>
+
+<p>Bonjour {{ name }},</p>
+
+<p>Veuillez confirmer votre adresse e-mail en cliquant sur le lien ci-dessous :</p>
+
+<p><a href="{{ confirmation_link }}">Confirmer mon e-mail</a></p>

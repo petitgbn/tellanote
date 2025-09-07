@@ -1,0 +1,11 @@
+asgiref
+Django
+six
+sqlparse
+django-environ
+gunicorn
+Pillow
+psycopg2-binary
+sqlparse
+tzdata
+whitenoise 
